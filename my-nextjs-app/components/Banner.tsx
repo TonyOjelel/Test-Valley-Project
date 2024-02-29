@@ -38,7 +38,7 @@ const Banner: React.FC = () => {
       <Slider {...settings}>
         {banners.map(banner => (
           <div key={banner.mainBannerId}>
-            <h2>{banner.title}</h2>
+            {/* <h2>{banner.title}</h2> */}
             <img src={banner.pcImageUrl} alt={banner.title} />
             <a href={banner.linkUrl}>Link</a>
           </div>

@@ -8,15 +8,14 @@ const Navbar: React.FC = () => {
             <div className="menu-icon">☰</div>
             <div className="nav-links">
                 <a href="#">카테고리</a>
-                <a href="#">로그인 / 가입하기</a>
             </div>
             <div className="search-bar">
-                <input type="text" placeholder="구매할지 망설이고 있다면" />
-                <button>🔍</button>
+                <input type="text" placeholder="🔍 구매할지 망설이고 있다면" />
+                {/* <button>🔍</button> */}
             </div>
             <div className="icons">
                 <span>50%</span>
-                <span>📦</span>
+                <a href="#">로그인 / 가입하기</a>
             </div>
         </nav>
     );
