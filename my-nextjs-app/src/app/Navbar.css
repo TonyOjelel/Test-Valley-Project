@@ -4,6 +4,7 @@
     align-items: center;
     background-color: #fff;
     color: #090909;
+    justify-content: space-between; /* Spacing between items */
     padding: 10px;
 }
 
@@ -25,21 +26,30 @@
     text-decoration: none;
     margin-right: 20px;
     color: rgb(71, 235, 181);
+    justify-content: space-between; /* Spacing between items */
 }
 
 .search-bar input {
     padding: 5px;
     border: 1px solid rgb(212, 210, 210); /* Add border style */
     border-radius: 5px;
-    margin-right: 10px;
+    justify-content: space-between; /* Spacing between items */
+    /* margin-right: 10px; */
+    flex: 1; /* Takes up remaining space */
+    text-align: center; /* Align input to the center */
 }
 
 .search-bar button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    justify-content: space-between; /* Spacing
+    flex: 1; /* Takes up remaining space */
+    text-align: center; /* Align input to the 
 }
 
 .icons span {
-    margin-right: 10px;
+    /* margin-right: 10px; */
+    display: flex;
+    align-items: center;
 }

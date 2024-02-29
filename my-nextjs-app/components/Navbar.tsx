@@ -21,7 +21,10 @@ const Navbar: React.FC = () => {
         {/* <button>🔍</button> */}
       </div>
       <div className="icons">
-        <span>50%</span>
+      <img
+            src="https://www.testvalley.kr/common/home-event.svg"
+            alt="Arrow"
+          />
         <a href="#">로그인 / 가입하기</a>
       </div>
     </nav>
