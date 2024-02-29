@@ -11,20 +11,20 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-right: auto;
-    color: aquamarine;
+    color: rgb(71, 235, 181);
 }
 
 .menu-icon {
     font-size: 1.5rem;
     margin-right: 20px;
     cursor: pointer;
-    color: aquamarine;
+    color: rgb(71, 235, 181);
 }
 
 .nav-links a {
     text-decoration: none;
     margin-right: 20px;
-    color: aquamarine;
+    color: rgb(71, 235, 181);
 }
 
 .search-bar input {
