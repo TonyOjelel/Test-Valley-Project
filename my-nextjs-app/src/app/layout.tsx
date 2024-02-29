@@ -1,13 +1,13 @@
 import React from "react";
 // import { useClient } from "next-use-client";
-// import Navbar from "../../components/Navbar";
+import Navbar from "../../components/Navbar";
 import Banner from "../../components/Banner";
 import Shortcut from "../../components/Shortcut";
 import ProductTile from "../../components/ProductTile";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import "./test.css";
+import "./Navbar.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +24,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <html lang="en">
       <body className={inter.className}>
         {/* Example usage of imported components */}
-        {/* <Navbar /> */}
+        <Navbar />
         <Banner />
         <Shortcut title="Shortcut Title" url="shortcut-url" />
         <ProductTile
