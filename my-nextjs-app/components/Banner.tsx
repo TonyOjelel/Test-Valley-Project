@@ -1,13 +1,17 @@
+// components/Banner.tsx
+"use client"; // This is a client component 👈🏽
 import React, { useState, useEffect } from 'react';
 
-const Banner = () => {
-  const [banners, setBanners] = useState([]);
+const Banner: React.FC = () => {
+  const [banners, setBanners] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('https://api.testvalley.kr/main-banner/all')
-      .then(response => response.json())
-      .then(data => setBanners(data))
-      .catch(error => console.error('Error fetching banners:', error));
+    if (typeof window !== 'undefined') {
+      fetch('https://api.testvalley.kr/main-banner/all')
+        .then(response => response.json())
+        .then(data => setBanners(data))
+        .catch(error => console.error('Error fetching banners:', error));
+    }
   }, []);
 
   return (
