@@ -1,3 +1,4 @@
+"use client"; // This is a client component 👈🏽
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";

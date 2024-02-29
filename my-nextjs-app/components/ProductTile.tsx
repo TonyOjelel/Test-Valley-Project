@@ -1,28 +1,42 @@
-// components/ProductTile.tsx
-import React from 'react';
+"use client"; // This is a client component 👈🏽
+import React, { useState, useEffect } from 'react';
 
 interface ProductTileProps {
-    imageUrl: string;
     title: string;
-    discount: number;
-    price: string;
-    rating: number;
-    details: string;
-  }
-  
-  const ProductTile: React.FC<ProductTileProps> = ({ imageUrl, title, discount, price, rating, details }) => {
+    subtitle: string;
+    description: string;
+    media: {
+        uri: string;
+        type: string;
+    }[];
+}
+
+const ProductTile: React.FC<ProductTileProps> = ({ title, subtitle, description, media }) => {
+    const [products, setProducts] = useState<any[]>([]);
+
+    useEffect(() => {
+        // Fetch data from the API
+        fetch('https://api.testvalley.kr/collections?prearrangedDiscount')
+            .then(response => response.json())
+            .then(data => {
+                // Assuming the data returned from the API is an array of products
+                setProducts(data.items);
+            })
+            .catch(error => console.error('Error fetching products:', error));
+    }, []);
+
     return (
-      <div className="product-tile">
-        <img src={imageUrl} alt={title} />
-        <div className="product-details">
-          <h3>{title}</h3>
-          <p>{discount}% {price}</p>
-          <p>Rating: {rating}</p>
-          <p>{details}</p>
+        <div className="product-tile">
+            {/* Render product tiles based on fetched data */}
+            {products.map(product => (
+                <div key={product.id}>
+                    <h3>{product.title}</h3>
+                    <h4>{product.subtitle}</h4>
+                    <p>{product.description}</p>
+                </div>
+            ))}
         </div>
-      </div>
     );
-  }
-  
-  export default ProductTile;
-  
+}
+
+export default ProductTile;
